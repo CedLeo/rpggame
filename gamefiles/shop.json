@@ -1,0 +1,77 @@
+{
+    "shop": {
+      "weapons": [
+        {
+          "name": "Stick",
+          "damage": 5,
+          "cost": 10
+        },
+        {
+          "name": "Dagger",
+          "damage": 10,
+          "cost": 30
+        },
+        {
+          "name": "Sword",
+          "damage": 20,
+          "cost": 50
+        },
+        {
+          "name": "Axe",
+          "damage": 25,
+          "cost": 70
+        },
+        {
+          "name": "Warhammer",
+          "damage": 35,
+          "cost": 100
+        },
+        {
+          "name": "Greatsword",
+          "damage": 50,
+          "cost": 150
+        }
+      ],
+      "armors": [
+        {
+          "name": "Cloth Armor",
+          "defense": 2,
+          "cost": 20
+        },
+        {
+          "name": "Leather Armor",
+          "defense": 5,
+          "cost": 40
+        },
+        {
+          "name": "Chainmail",
+          "defense": 10,
+          "cost": 70
+        },
+        {
+          "name": "Iron Armor",
+          "defense": 15,
+          "cost": 100
+        },
+        {
+          "name": "Steel Armor",
+          "defense": 25,
+          "cost": 150
+        },
+        {
+          "name": "Dragon Scale Armor",
+          "defense": 40,
+          "cost": 250
+        }
+      ],
+      "potions": [
+        {
+          "name": "Health Potion",
+          "recovery": 30,
+          "cost": 15,
+          "quantity": 1
+        }
+      ]
+    }
+  }
+  

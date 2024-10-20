@@ -1,0 +1,206 @@
+{
+  "forest": {
+    "Slime": {
+      "name": "Slime",
+      "health": 30,
+      "minLevel": 1,
+      "maxLevel": 10,
+      "normal_attack_damage": {
+        "base": 5,
+        "damage_per_level": 1
+      },
+      "high_attack": {
+        "damage": 15,
+        "trigger_after_attacks": 3
+      },
+      "gold": {
+        "base": 5,
+        "per_level": 1
+      },
+      "experience": {
+        "base": 10,
+        "per_level": 2
+      }
+    },
+    "Goblin": {
+      "name": "Goblin",
+      "health": 50,
+      "minLevel": 11,
+      "maxLevel": 20,
+      "normal_attack_damage": {
+        "base": 8,
+        "damage_per_level": 2
+      },
+      "high_attack": {
+        "damage": 20,
+        "trigger_after_attacks": 4
+      },
+      "gold": {
+        "base": 10,
+        "per_level": 2
+      },
+      "experience": {
+        "base": 20,
+        "per_level": 3
+      }
+    },
+    "Wolf": {
+      "name": "Wolf",
+      "health": 70,
+      "minLevel": 21,
+      "maxLevel": 30,
+      "normal_attack_damage": {
+        "base": 10,
+        "damage_per_level": 3
+      },
+      "high_attack": {
+        "damage": 25,
+        "trigger_after_attacks": 3
+      },
+      "gold": {
+        "base": 15,
+        "per_level": 3
+      },
+      "experience": {
+        "base": 30,
+        "per_level": 4
+      }
+    }
+  },
+  "cave": {
+    "Orc": {
+      "name": "Orc",
+      "health": 100,
+      "minLevel": 31,
+      "maxLevel": 40,
+      "normal_attack_damage": {
+        "base": 15,
+        "damage_per_level": 4
+      },
+      "high_attack": {
+        "damage": 30,
+        "trigger_after_attacks": 3
+      },
+      "gold": {
+        "base": 20,
+        "per_level": 4
+      },
+      "experience": {
+        "base": 40,
+        "per_level": 5
+      }
+    },
+    "Serpent": {
+      "name": "Serpent",
+      "health": 120,
+      "minLevel": 41,
+      "maxLevel": 50,
+      "normal_attack_damage": {
+        "base": 18,
+        "damage_per_level": 4
+      },
+      "high_attack": {
+        "damage": 35,
+        "trigger_after_attacks": 4
+      },
+      "gold": {
+        "base": 25,
+        "per_level": 5
+      },
+      "experience": {
+        "base": 50,
+        "per_level": 6
+      }
+    },
+    "Giant Spider": {
+      "name": "Giant Spider",
+      "health": 140,
+      "minLevel": 51,
+      "maxLevel": 60,
+      "normal_attack_damage": {
+        "base": 20,
+        "damage_per_level": 5
+      },
+      "high_attack": {
+        "damage": 40,
+        "trigger_after_attacks": 3
+      },
+      "gold": {
+        "base": 30,
+        "per_level": 5
+      },
+      "experience": {
+        "base": 60,
+        "per_level": 7
+      }
+    }
+  },
+  "dungeon": {
+    "Undead Knight": {
+      "name": "Undead Knight",
+      "health": 160,
+      "minLevel": 61,
+      "maxLevel": 70,
+      "normal_attack_damage": {
+        "base": 22,
+        "damage_per_level": 6
+      },
+      "high_attack": {
+        "damage": 45,
+        "trigger_after_attacks": 4
+      },
+      "gold": {
+        "base": 35,
+        "per_level": 6
+      },
+      "experience": {
+        "base": 70,
+        "per_level": 8
+      }
+    },
+    "2-Legged Reptile": {
+      "name": "2-Legged Reptile",
+      "health": 180,
+      "minLevel": 71,
+      "maxLevel": 80,
+      "normal_attack_damage": {
+        "base": 25,
+        "damage_per_level": 7
+      },
+      "high_attack": {
+        "damage": 50,
+        "trigger_after_attacks": 3
+      },
+      "gold": {
+        "base": 40,
+        "per_level": 7
+      },
+      "experience": {
+        "base": 80,
+        "per_level": 9
+      }
+    },
+    "Dragon": {
+      "name": "Dragon",
+      "health": 250,
+      "minLevel": 81,
+      "maxLevel": 100,
+      "normal_attack_damage": {
+        "base": 30,
+        "damage_per_level": 8
+      },
+      "high_attack": {
+        "damage": 60,
+        "trigger_after_attacks": 5
+      },
+      "gold": {
+        "base": 50,
+        "per_level": 8
+      },
+      "experience": {
+        "base": 100,
+        "per_level": 10
+      }
+    }
+  }
+}

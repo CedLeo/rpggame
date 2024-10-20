@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+    <title>RPG Game</title>
+</head>
+<body>
+    <main>
+        <section class="screen">
+            <div class="top-ui">
+                <div class="left-side">
+                    <h3>Health: <span id="health">100</span></h3>
+                    <h4>Gold: <span id="gold">958</span></h4>
+                </div>
+                <div class="right-side">
+                    <h3>Level: <span id="level">100</span></h3>
+                </div>
+            </div>  
+            <div class="middle-ui">
+                <div class="text-ui">
+                    <h1 id="screenTitle">Town Square</h1>
+                    <h2 id="screenText">Narrative text goes here, you are currently fighting a slime</h2>
+                </div>
+                <div class="main-options">
+                    <button class="option-btn" id="playerOption1">Option 1</button>
+                    <button class="option-btn" id="playerOption2">Option 2</button>
+                    <button class="option-btn" id="playerOption3">Option 3</button>
+                </div>
+                <div class="back">
+                    <button id="back">Back</button>
+                </div>
+            </div>
+            <div class="bottom-ui">
+                <button id="weapon">Weapon</button>
+                <button id="armor">Armor</button>
+                <button id="potion">Potion</button>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

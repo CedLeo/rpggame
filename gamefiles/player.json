@@ -1,0 +1,24 @@
+{
+    "player": {
+      "health": 100,
+      "gold": 0,
+      "experience": 0,
+      "level": 1,
+      "weapon": {
+        "name": "Stick",
+        "damage": 5
+      },
+      "armor": {
+        "name": "None",
+        "defense": 0
+      },
+      "potion": {
+        "quantity": 1
+      },
+      "inventory": {
+        "weapons": [],
+        "armors": []
+      }
+    }
+  }
+  

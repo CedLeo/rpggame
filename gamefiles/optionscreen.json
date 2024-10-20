@@ -1,0 +1,44 @@
+{
+  "townSquare": {
+    "title": "Town Square",
+    "button text": ["Go to shop", "Go to wilderness"],
+    "button functions": ["goShop", "goWilderness"],
+    "text": "You are in the town square. The bustling town surrounds you."
+  },
+  "shop": {
+    "title": "Shop",
+    "button text": ["Buy potion (10 gold)", "Buy armor (", "Buy weapon (", "Go back to town square"],
+    "button functions": ["buyPotion", "buyArmor", "buyWeapon", "goTownSquare"],
+    "text": "You entered the shop. The merchant offers you various items."
+  },
+  "wilderness": {
+    "title": "Wilderness",
+    "button text": ["Enter forest", "Enter cave", "Enter dungeon", "Go back to town square"],
+    "button functions": ["goForest", "goCave", "goDungeon", "goTownSquare"],
+    "text": "You ventured into the wilderness, ready to face what lies ahead."
+  },
+  "forest": {
+    "title": "Forest",
+    "button text": ["Attack slime", "Attack goblin", "Attack wolf", "Go back to wilderness"],
+    "button functions": ["attackSlime", "attackGoblin", "attackWolf", "goWilderness"],
+    "text": "You entered the forest, where creatures lurk in the shadows."
+  },
+  "cave": {
+    "title": "Cave",
+    "button text": ["Attack orc", "Attack serpent", "Attack giant spider", "Go back to wilderness"],
+    "button functions": ["attackOrc", "attackSerpent", "attackSpider", "goWilderness"],
+    "text": "You stepped into the cave, the damp air and eerie sounds filling the space."
+  },
+  "dungeon": {
+    "title": "Dungeon",
+    "button text": ["Attack undead knight", "Attack 2-legged reptile", "Attack dragon", "Go back to wilderness"],
+    "button functions": ["attackUndeadKnight", "attackReptile", "attackDragon", "goWilderness"],
+    "text": "You descended into the dungeon, where formidable enemies await."
+  },
+  "attackScreen": {
+    "title": "Battle",
+    "button text": ["Fight", "Dodge", "Use potion", "Run"],
+    "button functions": ["fight", "dodge", "usePotion", "run"],
+    "text": "You are in battle! Choose your action carefully."
+  }
+}
