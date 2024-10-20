@@ -281,7 +281,7 @@ const loadShop = async () =>{
 const buyPotion = () => {
     if(playerGold>=10){
         playerPotionAmount+=1;
-        screenText.textContent = "Great! now you can heal 15hp!"
+        screenText.textContent = "Great! now you can heal 30hp!"
         playerGold-=10;
         //update player stats
         gold.textContent = playerGold;
