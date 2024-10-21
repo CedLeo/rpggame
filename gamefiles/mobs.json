@@ -6,11 +6,11 @@
       "minLevel": 1,
       "maxLevel": 10,
       "normal_attack_damage": {
-        "base": 5,
+        "base": 3,
         "damage_per_level": 1
       },
       "high_attack": {
-        "damage": 15,
+        "damage": 8,
         "trigger_after_attacks": 3
       },
       "gold": {
@@ -28,11 +28,11 @@
       "minLevel": 11,
       "maxLevel": 20,
       "normal_attack_damage": {
-        "base": 8,
-        "damage_per_level": 2
+        "base": 5,
+        "damage_per_level": 1
       },
       "high_attack": {
-        "damage": 20,
+        "damage": 12,
         "trigger_after_attacks": 4
       },
       "gold": {
@@ -50,11 +50,11 @@
       "minLevel": 21,
       "maxLevel": 30,
       "normal_attack_damage": {
-        "base": 10,
-        "damage_per_level": 3
+        "base": 6,
+        "damage_per_level": 2
       },
       "high_attack": {
-        "damage": 25,
+        "damage": 16,
         "trigger_after_attacks": 3
       },
       "gold": {
@@ -74,11 +74,11 @@
       "minLevel": 31,
       "maxLevel": 40,
       "normal_attack_damage": {
-        "base": 15,
-        "damage_per_level": 4
+        "base": 8,
+        "damage_per_level": 2
       },
       "high_attack": {
-        "damage": 30,
+        "damage": 18,
         "trigger_after_attacks": 3
       },
       "gold": {
@@ -96,11 +96,11 @@
       "minLevel": 41,
       "maxLevel": 50,
       "normal_attack_damage": {
-        "base": 18,
-        "damage_per_level": 4
+        "base": 10,
+        "damage_per_level": 2
       },
       "high_attack": {
-        "damage": 35,
+        "damage": 22,
         "trigger_after_attacks": 4
       },
       "gold": {
@@ -118,11 +118,11 @@
       "minLevel": 51,
       "maxLevel": 60,
       "normal_attack_damage": {
-        "base": 20,
-        "damage_per_level": 5
+        "base": 12,
+        "damage_per_level": 3
       },
       "high_attack": {
-        "damage": 40,
+        "damage": 26,
         "trigger_after_attacks": 3
       },
       "gold": {
@@ -142,11 +142,11 @@
       "minLevel": 61,
       "maxLevel": 70,
       "normal_attack_damage": {
-        "base": 22,
-        "damage_per_level": 6
+        "base": 14,
+        "damage_per_level": 3
       },
       "high_attack": {
-        "damage": 45,
+        "damage": 28,
         "trigger_after_attacks": 4
       },
       "gold": {
@@ -164,11 +164,11 @@
       "minLevel": 71,
       "maxLevel": 80,
       "normal_attack_damage": {
-        "base": 25,
-        "damage_per_level": 7
+        "base": 16,
+        "damage_per_level": 4
       },
       "high_attack": {
-        "damage": 50,
+        "damage": 32,
         "trigger_after_attacks": 3
       },
       "gold": {
@@ -186,11 +186,11 @@
       "minLevel": 81,
       "maxLevel": 100,
       "normal_attack_damage": {
-        "base": 30,
-        "damage_per_level": 8
+        "base": 18,
+        "damage_per_level": 4
       },
       "high_attack": {
-        "damage": 60,
+        "damage": 36,
         "trigger_after_attacks": 5
       },
       "gold": {
