@@ -617,9 +617,15 @@ const fight = () => {
     if (enemyHealth <= 0) {
         handlePlayerWin();
     } else {
-        playerHealth -= enemyDamage;
-        enemyDamage = enemyNormDmg;
-        health.textContent = playerHealth;
+        if(playerDefense<enemyDamage){
+            playerHealth -= enemyDamage;
+            enemyDamage = enemyNormDmg;
+            health.textContent = playerHealth;
+        }else {
+            playerHealth -= 1;
+            enemyDamage = enemyNormDmg;
+            health.textContent = playerHealth;
+        }
 
         if (playerHealth <= 0) {
             handlePlayerLoss();
