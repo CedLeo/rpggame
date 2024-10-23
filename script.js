@@ -662,6 +662,7 @@ const usePotion = async () => {
 const run = async () => {
     goWilderness();
     screenText.textContent = "You successfully ran back to the wilderness";
+    notDuringFight = true;
 };
 
 //#endregion
