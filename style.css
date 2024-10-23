@@ -191,3 +191,138 @@ h6 {
     padding: 2em;
     font-size: 12px;
 }
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  /* Main container */
+  main {
+      height: auto;
+      padding: 1em;
+  }
+
+  /* Adjust screen container */
+  .screen {
+      width: 95%;
+      height: auto;
+      padding: 1em;
+      margin-bottom: 2em;
+  }
+
+  /* Adjust text */
+  h1 {
+      font-size: 1.8rem;
+  }
+
+  h2 {
+      font-size: 1.5rem;
+  }
+
+  h3 {
+      font-size: 1.3rem;
+  }
+
+  h4 {
+      font-size: 1.2rem;
+  }
+
+  h5, h6 {
+      font-size: 1rem;
+  }
+
+  .top-ui {
+      padding: 0 1em;
+      margin-bottom: 20px;
+  }
+
+  /* Adjust buttons and option layout */
+  .main-options {
+      flex-direction: column;
+      gap: 1em;
+  }
+
+  .option-btn {
+      font-size: 1rem;
+      padding: 0.8em;
+      margin: 0.5em 0;
+      flex-grow: 1;
+      text-align: center;
+  }
+
+  /* Adjust top UI */
+  .top-ui{
+    padding: 0 .5em;
+    margin-bottom: 10px;
+
+  }
+.text-ui{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+  /* Adjust bottom UI */
+  .bottom-ui {
+      gap: 1em;
+  }
+
+  .bottom-ui button {
+      padding: 1.7em;
+      font-size: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for smaller screens */
+  h1 {
+      font-size: 1.5rem;
+  }
+
+  h2 {
+      font-size: 1.25rem;
+  }
+
+  h3 {
+      font-size: .7rem;
+  }
+
+  h4 {
+      font-size: .7rem;
+  }
+
+  h5, h6 {
+      font-size: 0.875rem;
+  }
+
+  .screen {
+      width: 100%;
+      height: auto;
+      padding: 0.5em;
+  }
+
+  .main-options {
+      gap: 0.5em;
+      border: #333950 1px solid;
+      padding: 1em;
+  }
+
+  .back{
+    padding: 10px;
+    font-size: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .option-btn {
+      font-size: 0.975rem;
+      width: 100%;
+  }
+
+  .bottom-ui button {
+      padding: 1.5em;
+      font-size: 8px;
+  }
+}
