@@ -6,11 +6,11 @@
       "minLevel": 1,
       "maxLevel": 10,
       "normal_attack_damage": {
-        "base": 3,
+        "base": 5,
         "damage_per_level": 1
       },
       "high_attack": {
-        "damage": 8,
+        "damage": 15,
         "trigger_after_attacks": 3
       },
       "gold": {
@@ -19,7 +19,7 @@
       },
       "experience": {
         "base": 10,
-        "per_level": 2
+        "per_level": 1
       }
     },
     "Goblin": {
@@ -28,11 +28,11 @@
       "minLevel": 11,
       "maxLevel": 20,
       "normal_attack_damage": {
-        "base": 5,
-        "damage_per_level": 1
+        "base": 7,
+        "damage_per_level": 2
       },
       "high_attack": {
-        "damage": 12,
+        "damage": 20,
         "trigger_after_attacks": 4
       },
       "gold": {
@@ -50,11 +50,11 @@
       "minLevel": 21,
       "maxLevel": 30,
       "normal_attack_damage": {
-        "base": 6,
-        "damage_per_level": 2
+        "base": 8,
+        "damage_per_level": 3
       },
       "high_attack": {
-        "damage": 16,
+        "damage": 25,
         "trigger_after_attacks": 3
       },
       "gold": {
@@ -74,12 +74,12 @@
       "minLevel": 31,
       "maxLevel": 40,
       "normal_attack_damage": {
-        "base": 8,
-        "damage_per_level": 2
+        "base": 20,
+        "damage_per_level": 3
       },
       "high_attack": {
-        "damage": 18,
-        "trigger_after_attacks": 3
+        "damage": 50,
+        "trigger_after_attacks": 1
       },
       "gold": {
         "base": 20,
@@ -96,11 +96,11 @@
       "minLevel": 41,
       "maxLevel": 50,
       "normal_attack_damage": {
-        "base": 10,
-        "damage_per_level": 2
+        "base": 25,
+        "damage_per_level": 3
       },
       "high_attack": {
-        "damage": 22,
+        "damage": 55,
         "trigger_after_attacks": 4
       },
       "gold": {
@@ -118,11 +118,11 @@
       "minLevel": 51,
       "maxLevel": 60,
       "normal_attack_damage": {
-        "base": 12,
-        "damage_per_level": 3
+        "base": 30,
+        "damage_per_level": 4
       },
       "high_attack": {
-        "damage": 26,
+        "damage": 60,
         "trigger_after_attacks": 3
       },
       "gold": {
@@ -142,11 +142,11 @@
       "minLevel": 61,
       "maxLevel": 70,
       "normal_attack_damage": {
-        "base": 14,
-        "damage_per_level": 3
+        "base": 35,
+        "damage_per_level": 4
       },
       "high_attack": {
-        "damage": 28,
+        "damage": 65,
         "trigger_after_attacks": 4
       },
       "gold": {
@@ -158,17 +158,17 @@
         "per_level": 8
       }
     },
-    "2-Legged Reptile": {
+    "Reptile": {
       "name": "2-Legged Reptile",
       "health": 180,
       "minLevel": 71,
       "maxLevel": 80,
       "normal_attack_damage": {
-        "base": 16,
-        "damage_per_level": 4
+        "base": 40,
+        "damage_per_level": 5
       },
       "high_attack": {
-        "damage": 32,
+        "damage": 70,
         "trigger_after_attacks": 3
       },
       "gold": {
@@ -186,11 +186,11 @@
       "minLevel": 81,
       "maxLevel": 100,
       "normal_attack_damage": {
-        "base": 18,
-        "damage_per_level": 4
+        "base": 50,
+        "damage_per_level": 5
       },
       "high_attack": {
-        "damage": 36,
+        "damage": 90,
         "trigger_after_attacks": 5
       },
       "gold": {
