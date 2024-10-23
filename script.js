@@ -640,14 +640,14 @@ const dodge = async () => {
 };
 
 const usePotion = async () => {
-    bgSound.pause();
-    bgSound = new Audio('./gameresources/audio/potionSound.mp3');
-    bgSound.volume = 0.7;
-    bgSound.play();
     if (playerPotionAmount > 0 && playerHealth < 100) {
         playerHealth = Math.min(playerHealth + 30, 100);
         playerPotionAmount--;
         screenText.textContent = "You recovered some of your health back";
+        bgSound.pause();
+        bgSound = new Audio('./gameresources/audio/potionSound.mp3');
+        bgSound.volume = 0.7;
+        bgSound.play();
     } else if (playerPotionAmount <= 0) {
         screenText.textContent = "Go buy more potions";
     } else {
