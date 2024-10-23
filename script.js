@@ -7,6 +7,7 @@
 // DOM declarations
 let health = document.getElementById('health');
 let level = document.getElementById('level');
+let exp = document.getElementById('exp');
 let gold = document.getElementById('gold');
 let screenTitle = document.getElementById('screenTitle')
 let screenText = document.getElementById('screenText');
@@ -17,15 +18,14 @@ let back = document.getElementById('back');
 let weaponTxt = document.getElementById('weapon');
 let armorTxt = document.getElementById('armor');
 let potion = document.getElementById('potion');
-
-
-//==============================================================================================================================================================
-
+let bgMusic = new Audio('./gameresources/townSquareMusic.mp3');
+let bgSound = new Audio('./gameresources/attackSound.mp3');
 
 // Player base stats
 let playerHealth = 100;
 let playerLevel = 1;
 let playerExp = 0;
+let playerExpCap = playerLevel * 20;
 let playerGold = 100;
 let playerPotionAmount = 0;
 let playerWeaponTier = 1;
@@ -39,11 +39,12 @@ let playerHealthCapRate = 0;
 // Player stat display
 health.textContent = playerHealth;
 level.textContent = playerLevel;
+exp.textContent = playerExp+"/"+playerExpCap;
 gold.textContent = playerGold;
 potion.textContent = "Potion " + playerPotionAmount + "x"
 
 const reset = () => {
-    // Player base stats
+// Player base stats
 playerHealth = 100;
 playerLevel = 1;
 playerExp = 0;
@@ -67,11 +68,10 @@ potion.textContent = "Potion " + playerPotionAmount + "x"
 
 
 
-//==============================================================================================================================================================
+ 
 
-// ==============================================================================================================================================================
 
-// Load screens from JSON
+//#region Load screens from JSON
 const loadScreens = async () => {
     try {
         const response = await fetch('./gamefiles/optionscreen.json');
@@ -87,7 +87,10 @@ const goTownSquare = async () => {
     const screens = await loadScreens(); // Load screens data
     if (screens) {
         const townSquareScreen = screens["townSquare"]; // Declare inside after loading
-
+        bgMusic.pause();
+        bgMusic = new Audio('./gameresources/audio/townSquareMusic.mp3');
+        bgMusic.volume = 0.1;
+        bgMusic.play();
         // Screen text
         screenTitle.textContent = townSquareScreen["title"];
         screenText.textContent = townSquareScreen["text"];
@@ -116,7 +119,10 @@ const goShop = async () => {
     const shopOptions = await loadShop();
     if (screens) {
         const shopScreen = screens["shop"]; // Declare inside after loading
-
+        bgMusic.pause();
+        bgMusic = new Audio('./gameresources/audio/shopMusic.mp3');
+        bgMusic.volume = 0.2;
+        bgMusic.play();
         // Screen text
         screenTitle.textContent = shopScreen["title"];
         screenText.textContent = shopScreen["text"];
@@ -148,7 +154,10 @@ const goWilderness = async () => {
     const screens = await loadScreens(); // Load screens data
     if (screens) {
         const wildernessScreen = screens["wilderness"]; // Declare inside after loading
-
+        bgMusic.pause();
+        bgMusic = new Audio('./gameresources/audio/wildernessMusic.mp3');
+        bgMusic.volume = 0.2;
+        bgMusic.play();
         // Screen text
         screenTitle.textContent = wildernessScreen["title"];
         screenText.textContent = wildernessScreen["text"];
@@ -175,7 +184,10 @@ const goForest = async () => {
     const screens = await loadScreens();
     if (screens){
         const forestScreen = screens["forest"];
-
+        bgMusic.pause();
+        bgMusic = new Audio('./gameresources/audio/forestMusic.mp3');
+        bgMusic.volume = 0.2;
+        bgMusic.play();
         // Screen text
         screenTitle.textContent = forestScreen["title"];
         screenText.textContent = forestScreen["text"];
@@ -199,7 +211,10 @@ const goCave = async () => {
     const screens = await loadScreens();
     if (screens) {
         const caveScreen = screens["cave"];
-
+        bgMusic.pause();
+        bgMusic = new Audio('./gameresources/audio/caveMusic.mp3');
+        bgMusic.volume = 0.2;
+        bgMusic.play();
         // Screen text
         screenTitle.textContent = caveScreen["title"];
         screenText.textContent = caveScreen["text"];
@@ -223,7 +238,10 @@ const goDungeon = async () => {
     const screens = await loadScreens();
     if (screens) {
         const dungeonScreen = screens["dungeon"];
-
+        bgMusic.pause();
+        bgMusic = new Audio('./gameresources/audio/dungeonMusic.mp3');
+        bgMusic.volume = 0.2;
+        bgMusic.play();
         // Screen text
         screenTitle.textContent = dungeonScreen["title"];
         screenText.textContent = dungeonScreen["text"];
@@ -248,7 +266,10 @@ const goAttackScreen = async () => {
     const screens = await loadScreens();
     if (screens) {
         const attackScreen = screens["attackScreen"];
-
+        bgMusic.pause();
+        bgMusic = new Audio('./gameresources/audio/battleMusic.mp3');
+        bgMusic.volume = 0.2;
+        bgMusic.play();
         //Screen text
         screenTitle.textContent = attackScreen["title"];
         screenText.textContent = attackScreen["text"];
@@ -266,13 +287,13 @@ const goAttackScreen = async () => {
         back.onclick = run;
     }
 };
+//#endregion
+ 
 
-//==============================================================================================================================================================
 
+ 
 
-//==============================================================================================================================================================
-
-//Shop functions
+//#region Shop functions
 
 const loadShop = async () =>{
     try {
@@ -286,6 +307,10 @@ const loadShop = async () =>{
 
 const buyPotion = () => {
     if(playerGold>=10){
+        bgSound.pause();
+        bgSound = new Audio('./gameresources/audio/buySound.mp3');
+        bgSound.volume = 0.7;
+        bgSound.play();
         playerPotionAmount+=1;
         screenText.textContent = "Great! now you can heal 30hp!"
         playerGold-=10;
@@ -308,6 +333,10 @@ const buyWeapon = async () => {
         if(playerWeaponTier<weaponShop.length){
             if(playerGold>=weaponShop[playerWeaponTier]["cost"]){
                 if(playerLevel/5>=playerWeaponTier){
+                    bgSound.pause();
+                    bgSound = new Audio('./gameresources/audio/buySound.mp3');
+                    bgSound.volume = 0.7;
+                    bgSound.play();
                     playerGold-=weaponShop[playerWeaponTier]["cost"];
                     playerWeapon = weaponShop[playerWeaponTier]["name"];
                     weaponTxt.textContent = playerWeapon;
@@ -338,6 +367,10 @@ const buyArmor = async () => {
         if(playerArmorTier<armorShop.length){
             if(playerGold>=armorShop[playerArmorTier]["cost"]){
                 if(playerLevel/5>=playerArmorTier){
+                    bgSound.pause();
+                    bgSound = new Audio('./gameresources/audio/buySound.mp3');
+                    bgSound.volume = 0.7;
+                    bgSound.play();
                     playerGold-=armorShop[playerArmorTier]["cost"];
                     playerArmor = armorShop[playerArmorTier]["name"];
                     armorTxt.textContent = playerArmor;
@@ -356,14 +389,10 @@ const buyArmor = async () => {
         }
     }
 }
+//#endregion
 
 
-
-//==============================================================================================================================================================
-
-
-//==============================================================================================================================================================
-
+//#region Player UI functions
 //Player bottom UI functions
 const weaponInspect = () => {
     // Display player damage first
@@ -393,6 +422,10 @@ armorTxt.onclick = armorInspect;
 const useHealthPotion = () =>{
     if(notDuringFight){
         if(playerPotionAmount>0 && playerHealth<100+20*playerHealthCapRate){
+            bgSound.pause();
+            bgSound = new Audio('./gameresources/audio/potionSound.mp3');
+            bgSound.volume = 0.2;
+            bgSound.play();
             //uses potion
             playerHealth += 30; 
             if(playerHealth>100+20*playerHealthCapRate){
@@ -415,17 +448,15 @@ const useHealthPotion = () =>{
 
 }
 
-
-
 potion.onclick = useHealthPotion;
 
+//#endregion
+ 
 
-//==============================================================================================================================================================
 
-
-//==============================================================================================================================================================
-// Attack Functions
-
+ 
+//Enemy Encounter and Enemy States
+//#region -Enemy declaration
 const loadMobs = async () =>{
     try{
         const response = await fetch('./gamefiles/mobs.json');
@@ -445,11 +476,16 @@ let enemyGoldDrop = 1;
 let enemyExpDrop = 1;
 let enemyLevel = 1;
 let enemyAttack = 0;
+let enemyLevelFluctuation = 0;
 
 
 // Enemy Random Level generator
 function getRandomLevel(minLevel, maxLevel) {
     return Math.floor(Math.random() * (maxLevel - minLevel + 1)) + minLevel;
+}
+
+function levelFluctuation(minLevel, maxLevel) {
+    return Math.floor(Math.random() * (maxLevel - minLevel + 1));
 }
 
 const getDamage = (base, dpl, level) => {
@@ -476,13 +512,15 @@ const attackMob = async (location, mobName) => {
         enemyName = mob["name"];
         enemyHealth = mob["health"];
         enemyLevel = getRandomLevel(mob["minLevel"], mob["maxLevel"]);
+        enemyLevelFluctuation = levelFluctuation(mob["minLevel"], mob["maxLevel"]);
         enemyHTrigger = mobHDamage["trigger_after_attacks"];
         enemyAttack = 0;
-        enemyDamage = getDamage(mobNDamage["base"], mobNDamage["damage_per_level"], enemyLevel);
-        enemyHDamage = getDamage(mobHDamage["damage"], mobNDamage["damage_per_level"], enemyLevel);
+        enemyDamage = getDamage(mobNDamage["base"], mobNDamage["damage_per_level"], enemyLevelFluctuation);
+        enemyHDamage = getDamage(mobHDamage["damage"], mobNDamage["damage_per_level"], enemyLevelFluctuation);
         enemyGoldDrop = getGold(mobGold["base"], mobGold["per_level"], enemyLevel);
         enemyExpDrop = getExp(mobExp["base"], mobExp["per_level"], enemyLevel);
 
+        console.log(enemyLevelFluctuation);
         console.log(enemyName);
         console.log(enemyHealth)
         console.log(enemyLevel)
@@ -495,107 +533,130 @@ const attackMob = async (location, mobName) => {
     }
 };
 
+//#endregion
+
+ 
 
 
-//==============================================================================================================================================================
-
-
-//==============================================================================================================================================================
-
+ 
 
 // Action Functions in Attack Screen
+//#region -Attack Function
 let enemyNormDmg = 1;
 let notDuringFight = true;
 let halfEnemyHealth = 1;
-const fight = async () => {
-    console.log("enemy damage without player defense "+enemyDamage);
-    if(notDuringFight){
-        halfEnemyHealth = enemyHealth/2;
+
+const updatePlayerStats = () => {
+    gold.textContent = playerGold;
+    exp.textContent = `${playerExp}/${playerExpCap}`;
+    health.textContent = playerHealth;
+    level.textContent = playerLevel;
+};
+
+const handlePlayerWin = () => {
+    goWilderness();
+    screenText.textContent = "You won and you found your way out, you got some gold and exp";
+    playerGold += enemyGoldDrop;
+    playerExp += enemyExpDrop;
+
+    playerExpCap = playerLevel * 20;
+    if (playerExp >= playerExpCap) {
+        console.log("I leveled up");
+        playerLevel++;
+        playerExpCap = playerLevel * 20;
+        playerHealthCapRate++;
+        playerExp = 0;
+    }
+
+    updatePlayerStats();
+    notDuringFight = true;
+};
+
+const handlePlayerLoss = () => {
+    playerOption1.style.display = 'none';
+    playerOption2.style.display = 'none';
+    playerOption3.style.display = 'none';
+    back.style.display = 'none';
+    screenTitle.textContent = "Game over... resetting";
+    bgMusic.pause();
+    bgMusic = new Audio('./gameresources/audio/lostMusic.mp3');
+    bgMusic.volume = 0.2;
+    bgMusic.play();
+    reset();
+    setTimeout(goTownSquare, 9000);
+    notDuringFight = true;
+};
+
+const fight = () => {
+    console.log("enemy damage without player defense: " + enemyDamage);
+    bgSound.pause();
+    bgSound = new Audio('./gameresources/audio/attackSound.mp3');
+    bgSound.volume = 0.5;
+    bgSound.play();
+    if (notDuringFight) {
+        halfEnemyHealth = enemyHealth / 2;
         enemyDamage -= playerDefense;
         notDuringFight = false;
     }
+    
     if (enemyAttack < enemyHTrigger) {
         enemyNormDmg = enemyDamage;
         enemyAttack++;
-        console.log("triggering normal damage " +enemyDamage);
-        console.log(enemyAttack+" attack");
+        console.log("triggering normal damage: " + enemyDamage);
+        screenText.textContent = "The enemy used a normal attack";
     } else {
         enemyNormDmg = enemyDamage;
         enemyDamage = enemyHDamage;
         enemyAttack = 0;
-        console.log("triggering high attack damage " +enemyDamage);
-        console.log(enemyAttack+" attack");
+        console.log("triggering high attack damage: " + enemyDamage);
+        screenText.textContent = "The enemy used an ability, you took so much damage";
     }
+    
     enemyHealth -= playerDamage;
 
-    if(enemyHealth<=0){
-        goWilderness();
-        screenText.textContent = "You won and you found your way out, you got some gold and exp";
-        enemyAttack = 0;
-        playerGold += enemyGoldDrop;
-        playerExp += enemyExpDrop;
-        if(playerExp>=playerLevel*10){
-            screenText.textContent = "You levelled up! maybe youre becoming worthy";
-            playerLevel++;
-            playerHealthCapRate++;  
-            playerExp=0;
-        }
-        //update player gold, exp, level, health
-        gold.textContent = playerGold;
-        health.textContent = playerHealth;
-        level.textContent = playerLevel;
-        notDuringFight = true;
-    } else{
+    if (enemyHealth <= 0) {
+        handlePlayerWin();
+    } else {
         playerHealth -= enemyDamage;
         enemyDamage = enemyNormDmg;
         health.textContent = playerHealth;
-        if(enemyHealth <= halfEnemyHealth){
-            screenText.textContent = "The enemy is at critical health";
-        }else{
-            screenText.textContent = "Both of you took some damage";
-        }
 
-        if(playerHealth<=0){
-            playerOption1.style.display = 'none';
-            playerOption2.style.display = 'none';
-            playerOption3.style.display = 'none';
-            back.style.display = 'none';
-            screenTitle.textContent = "Game over... resetting"
-            screenText.textContent = "You lost and you found yourself in the wilderness"
-            reset();
-            setTimeout(() => {
-                goTownSquare();
-            }, 3000);
-            notDuringFight = true;
+        if (playerHealth <= 0) {
+            handlePlayerLoss();
         }
     }
 };
 
 const dodge = async () => {
+    bgSound.pause();
+    bgSound = new Audio('./gameresources/audio/dodgeSound.mp3');
+    bgSound.volume = 0.7;
+    bgSound.play();
     screenText.textContent = "You dodged the enemy, he wasted an attack!";
     enemyAttack++;
-    if(enemyAttack>=enemyHTrigger){
-        enemyAttack=0;
+    if (enemyAttack >= enemyHTrigger) {
+        enemyAttack = 0;
     }
 };
 
 const usePotion = async () => {
-    if(playerPotionAmount>0 && playerHealth<100){
-        //uses potion
-        playerHealth += 30;
-        if(playerHealth>100){
-            playerHealth = 100;
-        }
+    bgSound.pause();
+    bgSound = new Audio('./gameresources/audio/potionSound.mp3');
+    bgSound.volume = 0.7;
+    bgSound.play();
+    if (playerPotionAmount > 0 && playerHealth < 100) {
+        playerHealth = Math.min(playerHealth + 30, 100);
         playerPotionAmount--;
-        //update display
-        health.textContent = playerHealth;
-        potion.textContent = "Potion " + playerPotionAmount + "x"
         screenText.textContent = "You recovered some of your health back";
-        }else if(playerPotionAmount<=0){
-            screenText.textContent = "Go buy more potions";
-        }else {
-            screenText.textContent = "You are already full health";
-        }
+    } else if (playerPotionAmount <= 0) {
+        screenText.textContent = "Go buy more potions";
+    } else {
+        screenText.textContent = "You are already full health";
+    }
+
+    // Update display after using potion
+    health.textContent = playerHealth;
+    potion.textContent = `Potion ${playerPotionAmount}x`;
 };
 
 const run = async () => {
@@ -603,7 +664,8 @@ const run = async () => {
     screenText.textContent = "You successfully ran back to the wilderness";
 };
 
-//==============================================================================================================================================================
+//#endregion
+ 
 
 // Initialize the game with the town square
 goTownSquare();

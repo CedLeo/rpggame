@@ -133,6 +133,8 @@ h6 {
     border: var(--border-divider) 1px solid;
     background-size: cover;
     background-position: center;
+    flex-direction: column;
+    display: flex;
 }
 
 
