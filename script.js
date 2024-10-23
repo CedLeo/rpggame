@@ -553,19 +553,25 @@ const updatePlayerStats = () => {
     level.textContent = playerLevel;
 };
 
+const handleLevelUp = () =>{
+    while(playerExp>=playerExpCap){
+    console.log("I leveled up");
+    playerLevel++;
+    playerExpCap = playerLevel * 20;
+    playerHealthCapRate++;
+    playerExp -= playerExpCap;           
+  }
+}
+
 const handlePlayerWin = () => {
-    goWilderness();
-    screenText.textContent = "You won and you found your way out, you got some gold and exp";
     playerGold += enemyGoldDrop;
     playerExp += enemyExpDrop;
 
     playerExpCap = playerLevel * 20;
     if (playerExp >= playerExpCap) {
-        console.log("I leveled up");
-        playerLevel++;
-        playerExpCap = playerLevel * 20;
-        playerHealthCapRate++;
-        playerExp = 0;
+        goWilderness();
+        handleLevelUp();
+        screenText.textContent = "You won and you found your way out, you got some gold and exp";
     }
 
     updatePlayerStats();
