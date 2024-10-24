@@ -19,6 +19,7 @@ let weaponTxt = document.getElementById('weapon');
 let armorTxt = document.getElementById('armor');
 let potion = document.getElementById('potion');
 let bgMusic = new Audio('./gameresources/townSquareMusic.mp3');
+bgMusic.loop = true;
 let bgSound = new Audio('./gameresources/attackSound.mp3');
 
 // Player base stats
@@ -37,7 +38,7 @@ let playerDefense = 0;
 let playerHealthCapRate = 0;
 
 // Player stat display
-health.textContent = playerHealth;
+health.textContent = playerHealth +"/"+ (100+20*playerHealthCapRate); 
 level.textContent = playerLevel;
 exp.textContent = playerExp+"/"+playerExpCap;
 gold.textContent = playerGold;
@@ -59,17 +60,13 @@ playerDefense = 0;
 playerHealthCapRate = 0;
 playerExpCap = playerLevel * 20;
 
-
 // Player stat display
-health.textContent = playerHealth;
+health.textContent = playerHealth +"/"+ (100+20*playerHealthCapRate);;
 level.textContent = playerLevel;
-gold.textContent = playerGold;
 exp.textContent = playerExp+"/"+playerExpCap;
+gold.textContent = playerGold;
 potion.textContent = "Potion " + playerPotionAmount + "x"
 }
-
-
-
 
  
 
@@ -436,7 +433,7 @@ const useHealthPotion = () =>{
             }
             playerPotionAmount--;
             //update display
-            health.textContent = playerHealth;
+            health.textContent = playerHealth +"/"+ (100+20*playerHealthCapRate);;
             potion.textContent = "Potion " + playerPotionAmount + "x"
             screenText.textContent = "You recovered some of your health back";
             }else if(playerPotionAmount<=0){
@@ -552,7 +549,7 @@ let halfEnemyHealth = 1;
 const updatePlayerStats = () => {
     gold.textContent = playerGold;
     exp.textContent = `${playerExp}/${playerExpCap}`;
-    health.textContent = playerHealth;
+    health.textContent = playerHealth +"/"+ (100+20*playerHealthCapRate);;
     level.textContent = playerLevel;
 };
 
@@ -618,21 +615,24 @@ const fight = () => {
         console.log("triggering high attack damage: " + enemyDamage);
         screenText.textContent = "The enemy used an ability, you took so much damage";
     }
-    
+
+
     enemyHealth -= playerDamage;
 
     if (enemyHealth <= 0) {
         handlePlayerWin();
-    } else {
+    }
+     else {
         if(playerDefense<enemyDamage){
             playerHealth -= enemyDamage;
             enemyDamage = enemyNormDmg;
-            health.textContent = playerHealth;
+            health.textContent = playerHealth +"/"+ (100+20*playerHealthCapRate);;
         }else {
             playerHealth -= 1;
             enemyDamage = enemyNormDmg;
-            health.textContent = playerHealth;
+            health.textContent = playerHealth +"/"+ (100+20*playerHealthCapRate);;
         }
+
 
         if (playerHealth <= 0) {
             handlePlayerLoss();
@@ -668,14 +668,13 @@ const usePotion = async () => {
     }
 
     // Update display after using potion
-    health.textContent = playerHealth;
+    health.textContent = playerHealth +"/"+ (100+20*playerHealthCapRate);;
     potion.textContent = `Potion ${playerPotionAmount}x`;
 };
 
 const run = async () => {
     goWilderness();
     screenText.textContent = "You successfully ran back to the wilderness";
-    notDuringFight = true;
 };
 
 //#endregion
