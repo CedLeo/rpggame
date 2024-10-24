@@ -57,11 +57,14 @@ playerArmor;
 playerDamage = 5;
 playerDefense = 0;
 playerHealthCapRate = 0;
+playerExpCap = playerLevel * 20;
+
 
 // Player stat display
 health.textContent = playerHealth;
 level.textContent = playerLevel;
 gold.textContent = playerGold;
+exp.textContent = playerExp+"/"+playerExpCap;
 potion.textContent = "Potion " + playerPotionAmount + "x"
 }
 
